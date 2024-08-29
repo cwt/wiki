@@ -1,0 +1,14 @@
+ethaddr=GENERATE_THIS
+eth1addr=GENERATE_THIS++
+
+stdout=serial,vidconsole
+
+fdt_addr_r=0x1F000000
+fdtoverlay_addr_r=0x01000000
+kernel_addr_r=0x10000000
+kernel_comp_addr_r=0x18000000
+pxefile_addr_r=0x0c200000
+ramdisk_addr_r=0x20000000
+
+autoboot=usb start; nvme scan; sysboot nvme 0:5 any 0x2000000 /extlinux/extlinux.conf
+
